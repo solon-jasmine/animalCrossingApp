@@ -15,7 +15,12 @@ crossingApp.selectSpe = document.querySelector('#species');
 //object to store user input
 
 crossingApp.userInput = {};
+crossingApp.possibleVillagers = [];
 
+//get our api data first
+//set our event listener for submit
+//get user input from submit
+//filter our results from user input
 crossingApp.init = function() {
     crossingApp.getData();
     crossingApp.getUserInfo();
@@ -26,11 +31,16 @@ crossingApp.init = function() {
 crossingApp.getUserInfo = function() {
     crossingApp.formEl.addEventListener('submit', (event) => {
         event.preventDefault();
+        //selects checked input and saves value
         crossingApp.selectGen = document.querySelector('input[name="gender"]:checked');
         
+        //saves user input into userInput object
         crossingApp.userInput.personality = crossingApp.selectPer.value;
         crossingApp.userInput.gender = crossingApp.selectGen.value;
         crossingApp.userInput.species = crossingApp.selectSpe.value;
+
+        //Once done, calls filter to filter userInput
+        crossingApp.filterData(crossingApp.userInput, crossingApp.apiData);
     });
     
 };
@@ -47,11 +57,34 @@ crossingApp.getData = function() {
         return res.json();
     })
     .then( (jsonRes) => {
-        console.log(jsonRes);
+        crossingApp.apiData = jsonRes;
     });
 }
 
 //4. Filter our data using user input, create a new array of possible choices
+
+crossingApp.filterData = function (userInput, jsonRes) {
+    for (let villager in jsonRes) {
+        //check personality
+        const conditionOne = userInput.personality === jsonRes[villager].personality;
+        
+        //check gender
+        const conditionTwo = userInput.gender === jsonRes[villager].gender;
+        
+                // console.log(userInput.gender);
+                // console.log(jsonRes[villager].gender);
+                // console.log(conditionTwo)
+        
+        //check species
+        const conditionThree = userInput.species === jsonRes[villager].species;
+
+        // console.log(conditionOne, conditionTwo, conditionOne && conditionTwo);
+
+        if (conditionOne && conditionTwo && conditionThree) {
+            crossingApp.possibleVillagers.push(jsonRes[villager]);
+        }
+    }
+};
 
 //5. randomly choose an activity from possible choices/ filtered options
 
