@@ -3,9 +3,31 @@
 //using the acnh api, we want to suggest an activity for the user to do.
 //we want the user to pick from a set amount of questions in order to narrow down our choices of activity to a subset of activities. One activity will be randomly selected from this subset, and displayed to the user. If the user wants another activity in the same subset, they can click a button to randomly select a new activity.
 
-//1. on initial page load, display our questions and prompt the user for a response.
+//1. on initial page load, create namespace object display our questions and prompt the user for a response.
+
+const crossingApp = {};
+
+//query selectors
+crossingApp.formEl = document.querySelector('#inputForm');
+crossingApp.selectEl = document.querySelector('select');
+
+//object to store user input
+
+crossingApp.userInput = {};
+
+crossingApp.init = function() {
+    crossingApp.getUserInfo();
+};
 
 //2. Collect the user input into an object
+
+crossingApp.getUserInfo = function() {
+    crossingApp.formEl.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        crossingApp.userInput.personality = crossingApp.selectEl.value;
+    });
+};
 
 //3. Make an api call using user input
 
@@ -32,7 +54,7 @@ fetch('https://acnhapi.com/v1/villagers').then( (res) => {
 
 
 
-
+crossingApp.init();
 
 //stretch goals
 

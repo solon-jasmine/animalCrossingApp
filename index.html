@@ -7,6 +7,36 @@
     <title>API TEST</title>
 </head>
 <body>
+    <header>
+        <h1>Choose Your Villager</h1>
+    </header>
+
+    <main>
+        <div class="formContainer">
+            <form action="" id="inputForm">
+                <label for="personality">What Species?</label>
+                <select name="personality" id="personality">
+                    <option value="normal">Normal</option>
+                    <option value="lazy">Lazy</option>
+                    <option value="sisterly">Sisterly</option>
+                    <option value="snooty">Snooty</option>
+                    <option value="jock">Jock</option>
+                    <option value="peppy">Peppy</option>
+                    <option value="smug">Smug</option>
+                    <option value="cranky">Cranky</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="villagerContainer"></div>
+    </main>
+
+    <footer class="copyright">
+        <p>Copyright © 2021 <a href="https://www.junocollege.com">Juno College</a></p>
+    </footer>
+
     <script src="./script.js"></script>
 </body>
 </html>
