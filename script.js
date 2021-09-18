@@ -9,7 +9,7 @@ const crossingApp = {};
 
 //query selectors
 crossingApp.formEl = document.querySelector('#inputForm');
-crossingApp.selectEl = document.querySelector('select');
+crossingApp.selectPer = document.querySelector('#personality');
 
 //object to store user input
 
@@ -24,9 +24,12 @@ crossingApp.init = function() {
 crossingApp.getUserInfo = function() {
     crossingApp.formEl.addEventListener('submit', (event) => {
         event.preventDefault();
-
-        crossingApp.userInput.personality = crossingApp.selectEl.value;
+        crossingApp.selectGen = document.querySelector('input[name="gender"]:checked');
+        
+        crossingApp.userInput.personality = crossingApp.selectPer.value;
+        crossingApp.userInput.gender = crossingApp.selectGen.value;
     });
+    
 };
 
 //3. Make an api call using user input
