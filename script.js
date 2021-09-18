@@ -10,12 +10,14 @@ const crossingApp = {};
 //query selectors
 crossingApp.formEl = document.querySelector('#inputForm');
 crossingApp.selectPer = document.querySelector('#personality');
+crossingApp.selectSpe = document.querySelector('#species');
 
 //object to store user input
 
 crossingApp.userInput = {};
 
 crossingApp.init = function() {
+    crossingApp.getData();
     crossingApp.getUserInfo();
 };
 
@@ -28,6 +30,7 @@ crossingApp.getUserInfo = function() {
         
         crossingApp.userInput.personality = crossingApp.selectPer.value;
         crossingApp.userInput.gender = crossingApp.selectGen.value;
+        crossingApp.userInput.species = crossingApp.selectSpe.value;
     });
     
 };
@@ -39,15 +42,14 @@ crossingApp.getUserInfo = function() {
 // url.search = new URLSearchParams({
     
 // });
-
-console.log('script connected!')
-
-fetch('https://acnhapi.com/v1/villagers').then( (res) => {
-    return res.json();
-})
-.then( (jsonRes) => {
-    console.log(jsonRes);
-});
+crossingApp.getData = function() {
+    fetch('https://acnhapi.com/v1/villagers').then( (res) => {
+        return res.json();
+    })
+    .then( (jsonRes) => {
+        console.log(jsonRes);
+    });
+}
 
 //4. Filter our data using user input, create a new array of possible choices
 
