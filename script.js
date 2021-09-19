@@ -87,7 +87,7 @@ crossingApp.filterData = function (userInput, jsonRes) {
 
         }
     }
-    crossingApp.randomVil();
+    crossingApp.randomVil(crossingApp.possibleVillagers);
 };
 
 //5. randomly choose an villager from possible choices/ filtered options
