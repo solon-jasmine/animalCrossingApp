@@ -13,8 +13,9 @@ crossingApp.selectPer = document.querySelector('#personality');
 crossingApp.selectSpe = document.querySelector('#species');
 
 //object to store user input
-
 crossingApp.userInput = {};
+
+//object to store filtered data (what villagers match our conditions)
 crossingApp.possibleVillagers = [];
 
 //get our api data first
@@ -23,7 +24,6 @@ crossingApp.possibleVillagers = [];
 //filter our results from user input
 crossingApp.init = function() {
     crossingApp.getData();
-    crossingApp.getUserInfo();
 };
 
 //2. Collect the user input into an object
@@ -58,6 +58,7 @@ crossingApp.getData = function() {
     })
     .then( (jsonRes) => {
         crossingApp.apiData = jsonRes;
+        crossingApp.getUserInfo();
     });
 }
 
