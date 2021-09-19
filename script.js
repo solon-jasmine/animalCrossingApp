@@ -11,6 +11,7 @@ const crossingApp = {};
 crossingApp.formEl = document.querySelector('#inputForm');
 crossingApp.selectPer = document.querySelector('#personality');
 crossingApp.selectSpe = document.querySelector('#species');
+crossingApp.villagerEl = document.querySelector('.villagerContainer')
 
 //object to store user input
 crossingApp.userInput = {};
@@ -83,14 +84,29 @@ crossingApp.filterData = function (userInput, jsonRes) {
 
         if (conditionOne && conditionTwo && conditionThree) {
             crossingApp.possibleVillagers.push(jsonRes[villager]);
+
         }
     }
+    crossingApp.randomVil();
 };
 
-//5. randomly choose an activity from possible choices/ filtered options
+//5. randomly choose an villager from possible choices/ filtered options
+crossingApp.randomVil = function(possibleVillagers) {
+    const index = Math.floor(Math.random() * possibleVillagers.length);
+
+    return possibleVillagers[index];
+}
+
 
 //6. display the data by appending it to our html document
 
+crossingApp.displayData = function(displayedVillager) {
+
+}
+
+const villagerResult = crossingApp.randomVil();
+
+villagerEl.innerHTML = `${}`;
 
 
 crossingApp.init();
