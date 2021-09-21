@@ -66,6 +66,9 @@ crossingApp.getData = function() {
 //4. Filter our data using user input, create a new array of possible choices
 
 crossingApp.filterData = function (userInput, jsonRes) {
+    //clear possibleVillagers array before filtering
+    crossingApp.possibleVillagers = [];
+
     for (let villager in jsonRes) {
         //check personality
         const conditionOne = userInput.personality === jsonRes[villager].personality;
@@ -84,17 +87,21 @@ crossingApp.filterData = function (userInput, jsonRes) {
 
         if (conditionOne && conditionTwo && conditionThree) {
             crossingApp.possibleVillagers.push(jsonRes[villager]);
-
-        }
+        } 
     }
+
     crossingApp.randomVil(crossingApp.possibleVillagers);
 };
 
 //5. randomly choose an villager from possible choices/ filtered options
 crossingApp.randomVil = function(possibleVillagers) {
-    const index = Math.floor(Math.random() * possibleVillagers.length);
-
-    return possibleVillagers[index];
+    if (possibleVillagers.length === 0) {
+        crossingApp.displayData(null);
+    } else {
+        const index = Math.floor(Math.random() * possibleVillagers.length);
+    
+        crossingApp.displayData(possibleVillagers[index]);
+    }
 }
 
 
@@ -102,11 +109,34 @@ crossingApp.randomVil = function(possibleVillagers) {
 
 crossingApp.displayData = function(displayedVillager) {
 
+    if (displayedVillager === null) {
+        crossingApp.villagerEl.innerHTML = "";
+
+        const noMatch = "There's no matching villager :( Try again!";
+        const noMatchEl = document.createElement('p');
+        noMatchEl.innerText = noMatch;
+        
+        crossingApp.villagerEl.appendChild(noMatchEl);
+
+    } else {
+        crossingApp.villagerEl.innerHTML = "";
+    
+        const name = displayedVillager.name["name-USen"];
+        console.log(displayedVillager);
+        
+        const h2El = document.createElement('h2');
+        h2El.innerText = name;
+        crossingApp.villagerEl.appendChild(h2El);
+    
+    
+        const image = document.createElement('img');
+        image.src = displayedVillager.image_uri;
+        image.alt = `Image of ${name}. They are a ${displayedVillager.species}`;
+        crossingApp.villagerEl.appendChild(image);
+    }
+
+
 }
-
-const villagerResult = crossingApp.randomVil();
-
-villagerEl.innerHTML = `${}`;
 
 
 crossingApp.init();
