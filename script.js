@@ -125,12 +125,11 @@ crossingApp.displayData = function(displayedVillager) {
 
         // console.log(crossingApp.possibleVillagers.length)
         const quantity = document.createElement('p');
-        quantity.innerText = `Displaying 1 of ${crossingApp.possibleVillagers.length} results`;
+        quantity.innerText = `${crossingApp.possibleVillagers.length} results`;
         crossingApp.villagerEl.appendChild(quantity);
 
     
         const name = displayedVillager.name["name-USen"];
-        console.log(displayedVillager);
         
         const h2El = document.createElement('h2');
         h2El.innerText = name;
@@ -142,13 +141,37 @@ crossingApp.displayData = function(displayedVillager) {
         image.alt = `Image of ${name}. They are a ${displayedVillager.species}`;
         crossingApp.villagerEl.appendChild(image);
 
+        const randomButton = document.createElement('button');
+        randomButton.innerText = "Different villager?";
+        randomButton.classList.add('randomButton');
+        crossingApp.villagerEl.appendChild(randomButton);
+        
+        const resetButton = document.createElement('button');
+        resetButton.innerText = "Choose again?";
+        resetButton.classList.add('resetButton');
+        crossingApp.villagerEl.appendChild(resetButton);
+
         crossingApp.formContainer.classList.add('hidden');
+    }
+}
 
+crossingApp.resetPage = function() {
+    crossingApp.formContainer.classList.remove('hidden');
+    crossingApp.villagerEl.innerHTML = "";
+    crossingApp.possibleVillagers = [];
+};
 
+//add event listener to buttons in villagerContainer
+crossingApp.villagerEl.addEventListener('click', (event) => {
+    if (event.target.className === 'randomButton') {
+        crossingApp.randomVil(crossingApp.possibleVillagers);
     }
 
+    if (event.target.className === 'resetButton') {
+        crossingApp.resetPage();
+    }
 
-}
+});
 
 
 crossingApp.init();
