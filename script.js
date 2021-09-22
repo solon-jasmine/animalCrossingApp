@@ -11,7 +11,8 @@ const crossingApp = {};
 crossingApp.formEl = document.querySelector('#inputForm');
 crossingApp.selectPer = document.querySelector('#personality');
 crossingApp.selectSpe = document.querySelector('#species');
-crossingApp.villagerEl = document.querySelector('.villagerContainer')
+crossingApp.villagerEl = document.querySelector('.villagerContainer');
+crossingApp.formContainer = document.querySelector('.formContainer')
 
 //object to store user input
 crossingApp.userInput = {};
@@ -118,8 +119,15 @@ crossingApp.displayData = function(displayedVillager) {
         
         crossingApp.villagerEl.appendChild(noMatchEl);
 
+
     } else {
         crossingApp.villagerEl.innerHTML = "";
+
+        // console.log(crossingApp.possibleVillagers.length)
+        const quantity = document.createElement('p');
+        quantity.innerText = `Displaying 1 of ${crossingApp.possibleVillagers.length} results`;
+        crossingApp.villagerEl.appendChild(quantity);
+
     
         const name = displayedVillager.name["name-USen"];
         console.log(displayedVillager);
@@ -133,6 +141,10 @@ crossingApp.displayData = function(displayedVillager) {
         image.src = displayedVillager.image_uri;
         image.alt = `Image of ${name}. They are a ${displayedVillager.species}`;
         crossingApp.villagerEl.appendChild(image);
+
+        crossingApp.formContainer.classList.add('hidden');
+
+
     }
 
 
