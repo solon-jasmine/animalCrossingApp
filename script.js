@@ -20,6 +20,7 @@ crossingApp.userInput = {};
 //object to store filtered data (what villagers match our conditions)
 crossingApp.possibleVillagers = [];
 
+
 //get our api data first
 //set our event listener for submit
 //get user input from submit
@@ -40,6 +41,8 @@ crossingApp.getUserInfo = function() {
         crossingApp.userInput.personality = crossingApp.selectPer.value;
         crossingApp.userInput.gender = crossingApp.selectGen.value;
         crossingApp.userInput.species = crossingApp.selectSpe.value;
+
+        crossingApp.currentVillagerIndex = 0;
 
         //Once done, calls filter to filter userInput
         crossingApp.filterData(crossingApp.userInput, crossingApp.apiData);
@@ -91,17 +94,15 @@ crossingApp.filterData = function (userInput, jsonRes) {
         } 
     }
 
-    crossingApp.randomVil(crossingApp.possibleVillagers);
+    crossingApp.chooseVil(crossingApp.possibleVillagers);
 };
 
 //5. randomly choose an villager from possible choices/ filtered options
-crossingApp.randomVil = function(possibleVillagers) {
+crossingApp.chooseVil = function(possibleVillagers) {
     if (possibleVillagers.length === 0) {
         crossingApp.displayData(null);
     } else {
-        const index = Math.floor(Math.random() * possibleVillagers.length);
-    
-        crossingApp.displayData(possibleVillagers[index]);
+        crossingApp.displayData(possibleVillagers[crossingApp.currentVillagerIndex]);
     }
 }
 
@@ -125,7 +126,7 @@ crossingApp.displayData = function(displayedVillager) {
 
         // console.log(crossingApp.possibleVillagers.length)
         const quantity = document.createElement('p');
-        quantity.innerText = `${crossingApp.possibleVillagers.length} results`;
+        quantity.innerText = `Displaying ${crossingApp.currentVillagerIndex + 1} of ${crossingApp.possibleVillagers.length} results`;
         crossingApp.villagerEl.appendChild(quantity);
 
     
@@ -141,10 +142,19 @@ crossingApp.displayData = function(displayedVillager) {
         image.alt = `Image of ${name}. They are a ${displayedVillager.species}`;
         crossingApp.villagerEl.appendChild(image);
 
-        const randomButton = document.createElement('button');
-        randomButton.innerText = "Different villager?";
-        randomButton.classList.add('randomButton');
-        crossingApp.villagerEl.appendChild(randomButton);
+        if (crossingApp.currentVillagerIndex !== 0) {
+            const backButton = document.createElement('button');
+            backButton.innerText = "Previous Villager";
+            backButton.classList.add('backButton');
+            crossingApp.villagerEl.appendChild(backButton);
+        }
+        
+        if (crossingApp.currentVillagerIndex !== crossingApp.possibleVillagers.length - 1) {
+            const nextButton = document.createElement('button');
+            nextButton.innerText = "Next Villager";
+            nextButton.classList.add('nextButton');
+            crossingApp.villagerEl.appendChild(nextButton);
+        }
         
         const resetButton = document.createElement('button');
         resetButton.innerText = "Choose again?";
@@ -163,8 +173,14 @@ crossingApp.resetPage = function() {
 
 //add event listener to buttons in villagerContainer
 crossingApp.villagerEl.addEventListener('click', (event) => {
-    if (event.target.className === 'randomButton') {
-        crossingApp.randomVil(crossingApp.possibleVillagers);
+    if (event.target.className === 'nextButton') {
+        crossingApp.currentVillagerIndex++;
+        crossingApp.chooseVil(crossingApp.possibleVillagers);
+    }
+    
+    if (event.target.className === 'backButton') {
+        crossingApp.currentVillagerIndex--;
+        crossingApp.chooseVil(crossingApp.possibleVillagers);
     }
 
     if (event.target.className === 'resetButton') {
