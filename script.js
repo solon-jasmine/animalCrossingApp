@@ -10,7 +10,10 @@ const crossingApp = {};
 //query selectors
 crossingApp.formEl = document.querySelector('#inputForm');
 crossingApp.selectPer = document.querySelector('#personality');
-crossingApp.selectSpe = document.querySelector('#species');
+crossingApp.selectSpe1 = document.querySelector('#speciesOne');
+crossingApp.selectSpe2 = document.querySelector('#speciesTwo');
+crossingApp.selectSpe3 = document.querySelector('#speciesThree');
+crossingApp.selectSpe4 = document.querySelector('#speciesFour');
 crossingApp.villagerEl = document.querySelector('.villagerContainer');
 crossingApp.formContainer = document.querySelector('.formContainer')
 

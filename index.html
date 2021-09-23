@@ -36,8 +36,17 @@
                     <input type="radio" id="female" value="Female" name="gender">
                 </fieldset>
 
+                <label for="speciesRange">Pick a Species?</label>
+                <select name="speciesRange" id="speciesRange">
+                    <option value="" disabled selected>Choose Range</option>
+                    <option value="first">A to C</option>
+                    <option value="second">D to G</option>
+                    <option value="third">H to M</option>
+                    <option value="fourth">N to Z</option>
+                </select>
+
                 <label for="species">Pick a Species?</label>
-                <select name="species" id="species">
+                <select name="species" id="speciesOne">
                     <option value="Alligator">alligator</option>
                     <option value="Anteater">anteater</option>
                     <option value="Bear">bear</option>
@@ -47,6 +56,10 @@
                     <option value="Chicken">chicken</option>
                     <option value="Cow">cow</option>
                     <option value="Cub">cub</option>
+                </select>
+
+                <label for="species">Pick a Species?</label>
+                <select name="species" id="speciesTwo">
                     <option value="Deer">deer</option>
                     <option value="Dog">dog</option>
                     <option value="Duck">duck</option>
@@ -55,6 +68,10 @@
                     <option value="Frog">frog</option>
                     <option value="Goat">goat</option>
                     <option value="Gorilla">gorilla</option>
+                </select>
+
+                <label for="species">Pick a Species?</label>
+                <select name="species" id="speciesThree">
                     <option value="Hamster">hamster</option>
                     <option value="Hippo">hippo</option>
                     <option value="Horse">horse</option>
@@ -63,6 +80,10 @@
                     <option value="Lion">lion</option>
                     <option value="Monkey">monkey</option>
                     <option value="Mouse">mouse</option>
+                </select>
+
+                <label for="species">Pick a Species?</label>
+                <select name="species" id="speciesFour">
                     <option value="Octopus">octopus</option>
                     <option value="Ostrich">ostrich</option>
                     <option value="Penguin">penguin</option>
@@ -73,7 +94,6 @@
                     <option value="Squirrel">squirrel</option>
                     <option value="Tiger">tiger</option>
                     <option value="Wolf">wolf</option>
-                    
                 </select>
 
                 <button type="submit">Submit</button>
