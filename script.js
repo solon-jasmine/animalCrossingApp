@@ -37,6 +37,7 @@ crossingApp.init = function() {
     crossingApp.getData();
 };
 
+//event listener on speciesRange to allow for selection of hidden submenus
 crossingApp.selectRange.addEventListener('change', () => {
     if (crossingApp.selectRange.value === 'first') {
         crossingApp.divSpe1.classList.remove('hidden');
@@ -75,8 +76,22 @@ crossingApp.getUserInfo = function() {
         crossingApp.userInput.personality = crossingApp.selectPer.value;
         crossingApp.userInput.gender = crossingApp.selectGen.value;
 
+        //conditionals to add correct value from correct submenu to userInput.species
+        if (crossingApp.selectRange.value === "first") {
+            crossingApp.userInput.species = crossingApp.selectSpe1.value;
+        }
         
-        crossingApp.userInput.species = crossingApp.selectSpe.value;
+        if (crossingApp.selectRange.value === "second") {
+            crossingApp.userInput.species = crossingApp.selectSpe2.value;
+        }
+        
+        if (crossingApp.selectRange.value === "third") {
+            crossingApp.userInput.species = crossingApp.selectSpe3.value;
+        }
+        
+        if (crossingApp.selectRange.value === "fourth") {
+            crossingApp.userInput.species = crossingApp.selectSpe4.value;
+        }
 
         crossingApp.currentVillagerIndex = 0;
 
