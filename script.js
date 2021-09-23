@@ -10,10 +10,15 @@ const crossingApp = {};
 //query selectors
 crossingApp.formEl = document.querySelector('#inputForm');
 crossingApp.selectPer = document.querySelector('#personality');
+crossingApp.selectRange = document.querySelector('#speciesRange');
 crossingApp.selectSpe1 = document.querySelector('#speciesOne');
 crossingApp.selectSpe2 = document.querySelector('#speciesTwo');
 crossingApp.selectSpe3 = document.querySelector('#speciesThree');
 crossingApp.selectSpe4 = document.querySelector('#speciesFour');
+crossingApp.divSpe1 = document.querySelector('.speciesOne');
+crossingApp.divSpe2 = document.querySelector('.speciesTwo');
+crossingApp.divSpe3 = document.querySelector('.speciesThree');
+crossingApp.divSpe4 = document.querySelector('.speciesFour');
 crossingApp.villagerEl = document.querySelector('.villagerContainer');
 crossingApp.formContainer = document.querySelector('.formContainer')
 
@@ -32,8 +37,34 @@ crossingApp.init = function() {
     crossingApp.getData();
 };
 
-//2. Collect the user input into an object
+crossingApp.selectRange.addEventListener('change', () => {
+    if (crossingApp.selectRange.value === 'first') {
+        crossingApp.divSpe1.classList.remove('hidden');
+        crossingApp.divSpe2.classList.add('hidden');
+        crossingApp.divSpe3.classList.add('hidden');
+        crossingApp.divSpe4.classList.add('hidden');
+    }
+    if (crossingApp.selectRange.value === 'second') {
+        crossingApp.divSpe1.classList.add('hidden');
+        crossingApp.divSpe2.classList.remove('hidden');
+        crossingApp.divSpe3.classList.add('hidden');
+        crossingApp.divSpe4.classList.add('hidden');
+    }
+    if (crossingApp.selectRange.value === 'third') {
+        crossingApp.divSpe1.classList.add('hidden');
+        crossingApp.divSpe2.classList.add('hidden');
+        crossingApp.divSpe3.classList.remove('hidden');
+        crossingApp.divSpe4.classList.add('hidden');
+    }
+    if (crossingApp.selectRange.value === 'fourth') {
+        crossingApp.divSpe1.classList.add('hidden');
+        crossingApp.divSpe2.classList.add('hidden');
+        crossingApp.divSpe3.classList.add('hidden');
+        crossingApp.divSpe4.classList.remove('hidden');
+    }
+});
 
+//2. Collect the user input into an object
 crossingApp.getUserInfo = function() {
     crossingApp.formEl.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -43,6 +74,8 @@ crossingApp.getUserInfo = function() {
         //saves user input into userInput object
         crossingApp.userInput.personality = crossingApp.selectPer.value;
         crossingApp.userInput.gender = crossingApp.selectGen.value;
+
+        
         crossingApp.userInput.species = crossingApp.selectSpe.value;
 
         crossingApp.currentVillagerIndex = 0;
@@ -52,6 +85,7 @@ crossingApp.getUserInfo = function() {
     });
     
 };
+
 
 //3. Make an api call using user input
 
