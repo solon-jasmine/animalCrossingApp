@@ -226,6 +226,25 @@ html {
   overflow: hidden;
 }
 
+header {
+  background-image: url("../assets/animal-crossing-banner-twitter.jpg");
+  background-size: cover;
+  background-position: 50% 72%;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header h1 {
+  margin: 0;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -240,20 +259,8 @@ body {
   height: 100vh;
 }
 
-header {
-  background-color: tomato;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-header h1 {
-  margin: 0;
+.hidden {
+  display: none;
 }
 
 .mainWrapper {
@@ -283,9 +290,37 @@ header h1 {
   background-color: black;
 }
 .formContainer .formStyle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 20px;
   background-color: white;
   border: 1px solid black;
   border-radius: 20px;
+}
+.formContainer label, .formContainer select, .formContainer input, .formContainer button {
+  display: block;
+}
+.formContainer label {
+  width: 100%;
+}
+.formContainer fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.formContainer fieldset label, .formContainer fieldset input {
+  width: 50%;
 }
 
 .copyright {
@@ -305,8 +340,4 @@ header h1 {
 }
 .copyright p a {
   text-decoration: none;
-}
-
-.hidden {
-  display: none;
 }
