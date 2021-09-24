@@ -334,6 +334,13 @@ body {
   margin: 20px auto 0;
 }
 
+.villagerContainer {
+  max-width: 33%;
+  border: 20px solid black;
+  border-radius: 20px;
+  background-color: black;
+}
+
 .copyright {
   background-color: yellowgreen;
   display: -webkit-box;

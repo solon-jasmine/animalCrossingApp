@@ -69,6 +69,9 @@ crossingApp.selectRange.addEventListener('change', () => {
 crossingApp.getUserInfo = function() {
     crossingApp.formEl.addEventListener('submit', (event) => {
         event.preventDefault();
+        //reveals formContainer
+        crossingApp.villagerEl.classList.remove('hidden');
+        
         //selects checked input and saves value
         crossingApp.selectGen = document.querySelector('input[name="gender"]:checked');
         
@@ -221,6 +224,7 @@ crossingApp.resetPage = function() {
     crossingApp.formContainer.classList.remove('hidden');
     crossingApp.villagerEl.innerHTML = "";
     crossingApp.possibleVillagers = [];
+    crossingApp.villagerEl.classList.add('hidden');
 };
 
 //add event listener to buttons in villagerContainer
