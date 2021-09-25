@@ -166,20 +166,24 @@ crossingApp.chooseVil = function(possibleVillagers) {
 
 crossingApp.displayData = function(displayedVillager) {
 
+    crossingApp.formContainer.classList.add('hidden');
+
     if (displayedVillager === null) {
         crossingApp.villagerEl.innerHTML = "";
 
         const noMatch = "There's no matching villager :( Try again!";
         const noMatchEl = document.createElement('p');
         noMatchEl.innerText = noMatch;
-        
         crossingApp.villagerEl.appendChild(noMatchEl);
 
+        const resetButton = document.createElement('button');
+        resetButton.innerText = "Choose again?";
+        resetButton.classList.add('resetButton');
+        crossingApp.villagerEl.appendChild(resetButton);
 
     } else {
         crossingApp.villagerEl.innerHTML = "";
 
-        // console.log(crossingApp.possibleVillagers.length)
         const quantity = document.createElement('p');
         quantity.innerText = `Displaying ${crossingApp.currentVillagerIndex + 1} of ${crossingApp.possibleVillagers.length} results`;
         crossingApp.villagerEl.appendChild(quantity);
@@ -215,8 +219,6 @@ crossingApp.displayData = function(displayedVillager) {
         resetButton.innerText = "Choose again?";
         resetButton.classList.add('resetButton');
         crossingApp.villagerEl.appendChild(resetButton);
-
-        crossingApp.formContainer.classList.add('hidden');
     }
 }
 
