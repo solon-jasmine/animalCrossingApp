@@ -21,7 +21,7 @@
         <div class="introduction">
             <p>Search all villagers in the Animal Crossing video game franchise! </p>
         </div>
-        <div class="formContainer">
+        <div class="formContainer phoneOutside">
             <!-- Test -->
             <div class="phoneIcon">
                 <i class="fas fa-dot-circle"></i>
@@ -29,7 +29,7 @@
                 <i class="fas fa-signal"></i>
                 <i class="fas fa-battery-three-quarters"></i>              
             </div>
-            <form action="" id="inputForm" class="formStyle">
+            <form action="" id="inputForm" class="phoneInside">
                 <label for="personality" class="personalityStyle">Pick a Personality?</label>
                 <select name="personality" id="personality">
                     <option value="Normal">Normal</option>
@@ -60,7 +60,7 @@
                     <option value="fourth">N to Z</option>
                 </select>
                 <div class="speciesOne speciesContainer hidden">
-                    <label for="species">Pick a Species?</label>
+                    <label for="species" class="sr-only">Submenu</label>
                     <select name="species" id="speciesOne">
                         <option value="Alligator">alligator</option>
                         <option value="Anteater">anteater</option>
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="speciesTwo speciesContainer hidden">
-                    <label for="species">Pick a Species?</label>
+                    <label for="species" class="sr-only">Submenu</label>
                     <select name="species" id="speciesTwo">
                         <option value="Deer">deer</option>
                         <option value="Dog">dog</option>
@@ -89,7 +89,7 @@
                 </div>
                 
                 <div class="speciesThree speciesContainer hidden">
-                    <label for="species">Pick a Species?</label>
+                    <label for="species" class="sr-only">Submenu</label>
                     <select name="species" id="speciesThree">
                         <option value="Hamster">hamster</option>
                         <option value="Hippo">hippo</option>
@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="speciesFour speciesContainer hidden">
-                    <label for="species">Pick a Species?</label>
+                    <label for="species" class="sr-only">Submenu</label>
                     <select name="species" id="speciesFour">
                         <option value="Octopus">octopus</option>
                         <option value="Ostrich">ostrich</option>
@@ -123,7 +123,15 @@
             </form>
         </div>
 
-        <div class="villagerContainer hidden"></div>
+        <div class="phoneOutside">
+            <div class="phoneIcon">
+                <i class="fas fa-dot-circle"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-battery-three-quarters"></i>              
+            </div>
+            <div class="villagerContainer phoneInside hidden"></div>
+        </div>
     </main>
 
     <footer class="copyright">

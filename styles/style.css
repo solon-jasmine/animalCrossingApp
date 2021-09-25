@@ -226,6 +226,10 @@ html {
   overflow: hidden;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 header {
   background-image: url("../assets/animal-crossing-banner-twitter.jpg");
   background-size: cover;
@@ -244,6 +248,8 @@ header {
 header h1 {
   font-family: "BioRhyme", serif;
   margin: 0;
+  font-size: 4.5rem;
+  color: #FAFAFA;
 }
 
 body {
@@ -290,17 +296,17 @@ body {
   margin: 0;
 }
 
-.formContainer {
+.phoneOutside {
   width: 335px;
-  border: 10px solid black;
+  border: 10px solid #232323;
   border-radius: 25px;
-  background-color: black;
+  background-color: #232323;
   min-height: 480px;
   -webkit-box-shadow: 7px 4px 16px gray;
           box-shadow: 7px 4px 16px gray;
-  border-bottom: 26px solid black;
+  border-bottom: 26px solid #232323;
 }
-.formContainer .phoneIcon {
+.phoneOutside .phoneIcon {
   position: relative;
   top: 24px;
   display: -webkit-box;
@@ -310,19 +316,19 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.formContainer .phoneIcon i {
+.phoneOutside .phoneIcon i {
   color: white;
   position: relative;
   right: 15px;
   font-size: 20px;
   padding: 0 2px;
 }
-.formContainer .phoneIcon .fa-dot-circle {
+.phoneOutside .phoneIcon .fa-dot-circle {
   color: #232323;
   font-weight: 800;
   margin: 0 40px;
 }
-.formContainer .formStyle {
+.phoneOutside .phoneInside {
   min-height: 460px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #95d590), color-stop(3%, #F2FDED), color-stop(84%, #95d590));
   background: linear-gradient(to bottom, #95d590 2%, #F2FDED 3% 83%, #95d590 84%);
@@ -345,53 +351,71 @@ body {
   border-top: 20px solid #95d590;
   border-radius: 30px;
 }
-.formContainer label, .formContainer select, .formContainer input, .formContainer button {
+.phoneOutside label, .phoneOutside select, .phoneOutside input, .phoneOutside button {
   display: block;
 }
-.formContainer select {
+.phoneOutside select {
   font-family: "Space Mono", monospace;
+  background-color: #95d590;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  padding: 4px 10px;
 }
-.formContainer label {
+.phoneOutside label {
   width: 100%;
+  font-size: 1.8rem;
 }
-.formContainer .personalityStyle {
+.phoneOutside .personalityStyle {
   margin-top: 25px;
 }
-.formContainer fieldset {
+.phoneOutside fieldset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   border: none;
+  font-size: 1.8rem;
 }
-.formContainer fieldset label, .formContainer fieldset input {
+.phoneOutside fieldset label, .phoneOutside fieldset input {
   width: 50%;
 }
-.formContainer fieldset .inner {
+.phoneOutside fieldset .inner {
   margin-bottom: 5px;
 }
-.formContainer .submitBackground {
+.phoneOutside .submitBackground {
   width: 100%;
 }
-.formContainer button {
+.phoneOutside button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin: 20px auto 10px;
 }
-.formContainer .speciesContainer input, .formContainer .speciesContainer select {
+.phoneOutside .speciesContainer input, .phoneOutside .speciesContainer select {
   margin: 15px auto 0;
 }
 
 .villagerContainer {
-  max-width: 33%;
-  border: 20px solid black;
-  border-radius: 20px;
-  background-color: black;
+  position: relative;
+}
+.villagerContainer img {
+  border-radius: 50%;
+  max-width: 156px;
 }
 .villagerContainer button {
   font-family: "Space Mono", monospace;
+}
+.villagerContainer .nextButton {
+  position: absolute;
+  bottom: 0px;
+  right: 47px;
+}
+.villagerContainer .backButton {
+  position: absolute;
+  bottom: 0px;
+  left: 47px;
 }
 
 .copyright {

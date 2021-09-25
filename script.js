@@ -188,18 +188,17 @@ crossingApp.displayData = function(displayedVillager) {
         quantity.innerText = `Displaying ${crossingApp.currentVillagerIndex + 1} of ${crossingApp.possibleVillagers.length} results`;
         crossingApp.villagerEl.appendChild(quantity);
 
-    
         const name = displayedVillager.name["name-USen"];
         
-        const h2El = document.createElement('h2');
-        h2El.innerText = name;
-        crossingApp.villagerEl.appendChild(h2El);
-    
-    
         const image = document.createElement('img');
         image.src = displayedVillager.image_uri;
         image.alt = `Image of ${name}. They are a ${displayedVillager.species}`;
         crossingApp.villagerEl.appendChild(image);
+
+        const h2El = document.createElement('h2');
+        h2El.innerText = name;
+        crossingApp.villagerEl.appendChild(h2El);
+    
 
         if (crossingApp.currentVillagerIndex !== 0) {
             const backButton = document.createElement('button');
