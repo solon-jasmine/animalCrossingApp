@@ -31,9 +31,32 @@ body {
 .formContainer {
     width: 335px;
     border: 10px solid black;
-    border-radius: 20px;
+    border-radius: 25px;
     background-color: black;
     min-height: 480px;
+    box-shadow: 7px 4px 16px gray;
+    // Test
+    border-bottom: 26px solid black;
+
+    // Test
+    .phoneIcon{
+        position: relative;
+        top: 24px;
+        display: flex;
+        justify-content: flex-end;
+        i {
+            color: white;
+            position: relative;
+            right: 15px;
+            font-size: 20px;   
+            padding: 0 2px;        
+        }
+        .fa-dot-circle {
+            color: $black;
+            font-weight: 800;
+            margin: 0 40px;
+        }
+    }
 
     .formStyle {
         min-height: 460px;
@@ -112,6 +135,10 @@ body {
     align-items: center;
     p {
         margin: 0;
+        .fa-copyright {
+            font-size: 12px;
+            padding: 0 3px;
+        }
         a {
             text-decoration: none;
         }

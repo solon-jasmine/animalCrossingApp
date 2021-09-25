@@ -293,9 +293,34 @@ body {
 .formContainer {
   width: 335px;
   border: 10px solid black;
-  border-radius: 20px;
+  border-radius: 25px;
   background-color: black;
   min-height: 480px;
+  -webkit-box-shadow: 7px 4px 16px gray;
+          box-shadow: 7px 4px 16px gray;
+  border-bottom: 26px solid black;
+}
+.formContainer .phoneIcon {
+  position: relative;
+  top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.formContainer .phoneIcon i {
+  color: white;
+  position: relative;
+  right: 15px;
+  font-size: 20px;
+  padding: 0 2px;
+}
+.formContainer .phoneIcon .fa-dot-circle {
+  color: #232323;
+  font-weight: 800;
+  margin: 0 40px;
 }
 .formContainer .formStyle {
   min-height: 460px;
@@ -383,6 +408,10 @@ body {
 }
 .copyright p {
   margin: 0;
+}
+.copyright p .fa-copyright {
+  font-size: 12px;
+  padding: 0 3px;
 }
 .copyright p a {
   text-decoration: none;
