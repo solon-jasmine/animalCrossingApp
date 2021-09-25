@@ -1,16 +1,3 @@
-body {
-    display: flex;
-    font-family: $secondaryFont;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-}
-
-.hidden {
-    display: none;
-}
-
-
 .mainWrapper {
     background-image: url('../assets/ac-new-horizons-leaf-pattern-v2-3840x2160-1.jpg');
     background-image: cover;
@@ -18,13 +5,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .introduction {
-        text-align: center;
-        margin-bottom: 20px;
-        p {
-            margin: 0;
-        }
-    }
 }
 
 
@@ -33,7 +13,7 @@ body {
     border: 10px solid $black;
     border-radius: 25px;
     background-color: $black;
-    min-height: 480px;
+    min-height: 620px;
     box-shadow: 7px 4px 16px gray;
     border-bottom: 26px solid $black;
 
@@ -42,6 +22,7 @@ body {
         top: 24px;
         display: flex;
         justify-content: flex-end;
+        z-index: 1;
         i {
             color: white;
             position: relative;
@@ -57,8 +38,8 @@ body {
     }
 
     .phoneInside{
-        min-height: 460px;
-        background: linear-gradient(to bottom, $secondaryPhoneColor 2%, $primaryPhoneColor 3% 83%, $secondaryPhoneColor 84%);
+        min-height: 560px;
+        background: linear-gradient(to bottom, $secondaryPhoneColor 2%, $primaryPhoneColor 3% 85%, $secondaryPhoneColor 86%);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -107,10 +88,17 @@ body {
         width: 100%;
     }
     button {
+        color: $black;
+        font-size: 1.8rem;
         width: 50px;
         height: 50px;
         border-radius: 50%;
         margin: 20px auto 10px;
+
+        i {
+            position: relative;
+            top: 2px;
+        }
     }
 
     .speciesContainer{
@@ -126,18 +114,30 @@ body {
         border-radius: 50%;
         max-width: 156px;
     }
-    button {
-        font-family: $secondaryFont;
+
+    .nextButton, .backButton {
+        font-size: 2.5rem;
+
     }
+
     .nextButton {
         position: absolute;
         bottom: 0px;
-        right: 47px;    
+        right: 47px;  
+        i {
+            left: 2px;
+        }  
     }
     .backButton {
         position: absolute;
         bottom: 0px;
         left: 47px;
+        i {
+            right: 2px;
+        }  
+    }
+    .noMatch {
+        margin-top: 180px;
     }
 }
 
@@ -147,6 +147,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
     p {
         margin: 0;
         .fa-copyright {

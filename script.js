@@ -20,7 +20,8 @@ crossingApp.divSpe2 = document.querySelector('.speciesTwo');
 crossingApp.divSpe3 = document.querySelector('.speciesThree');
 crossingApp.divSpe4 = document.querySelector('.speciesFour');
 crossingApp.villagerEl = document.querySelector('.villagerContainer');
-crossingApp.formContainer = document.querySelector('.formContainer')
+crossingApp.formContainer = document.querySelector('.formContainer');
+crossingApp.villagerPhone = document.querySelector('.villagerPhone');
 
 //object to store user input
 crossingApp.userInput = {};
@@ -69,8 +70,8 @@ crossingApp.selectRange.addEventListener('change', () => {
 crossingApp.getUserInfo = function() {
     crossingApp.formEl.addEventListener('submit', (event) => {
         event.preventDefault();
-        //reveals formContainer
-        crossingApp.villagerEl.classList.remove('hidden');
+        //reveals villagerPhone
+        crossingApp.villagerPhone.classList.remove('hidden');
         
         //selects checked input and saves value
         crossingApp.selectGen = document.querySelector('input[name="gender"]:checked');
@@ -174,10 +175,11 @@ crossingApp.displayData = function(displayedVillager) {
         const noMatch = "There's no matching villager :( Try again!";
         const noMatchEl = document.createElement('p');
         noMatchEl.innerText = noMatch;
+        noMatchEl.classList.add('noMatch');
         crossingApp.villagerEl.appendChild(noMatchEl);
 
         const resetButton = document.createElement('button');
-        resetButton.innerText = "Choose again?";
+        resetButton.innerHTML = `<span class="sr-only">reset</span><i class="fas fa-undo-alt" aria-hidden="true" title="reset"></i>`;
         resetButton.classList.add('resetButton');
         crossingApp.villagerEl.appendChild(resetButton);
 
@@ -198,24 +200,36 @@ crossingApp.displayData = function(displayedVillager) {
         const h2El = document.createElement('h2');
         h2El.innerText = name;
         crossingApp.villagerEl.appendChild(h2El);
+
+        const birthday = document.createElement('p');
+        birthday.innerText = `Birthday: ${displayedVillager.birthday}`;
+        crossingApp.villagerEl.appendChild(birthday);
+
+        const hobby = document.createElement('p');
+        hobby.innerText = `Hobby: ${displayedVillager.hobby}`;
+        crossingApp.villagerEl.appendChild(hobby);
+
+        const saying = document.createElement('p');
+        saying.innerText = `Saying: "${displayedVillager.saying}"`;
+        crossingApp.villagerEl.appendChild(saying);
     
 
         if (crossingApp.currentVillagerIndex !== 0) {
             const backButton = document.createElement('button');
-            backButton.innerText = "Previous Villager";
+            backButton.innerHTML = `<span class="sr-only">previous</span><i class="fas fa-caret-left" aria-hidden="true" title="previous"></i>`;
             backButton.classList.add('backButton');
             crossingApp.villagerEl.appendChild(backButton);
         }
         
         if (crossingApp.currentVillagerIndex !== crossingApp.possibleVillagers.length - 1) {
             const nextButton = document.createElement('button');
-            nextButton.innerText = "Next Villager";
+            nextButton.innerHTML = `<span class="sr-only">next</span><i class="fas fa-caret-right" aria-hidden="true" title="next"></i>`;
             nextButton.classList.add('nextButton');
             crossingApp.villagerEl.appendChild(nextButton);
         }
         
         const resetButton = document.createElement('button');
-        resetButton.innerText = "Choose again?";
+        resetButton.innerHTML = `<span class="sr-only">reset</span><i class="fas fa-undo-alt" aria-hidden="true" title="reset"></i>`;
         resetButton.classList.add('resetButton');
         crossingApp.villagerEl.appendChild(resetButton);
     }
@@ -225,7 +239,7 @@ crossingApp.resetPage = function() {
     crossingApp.formContainer.classList.remove('hidden');
     crossingApp.villagerEl.innerHTML = "";
     crossingApp.possibleVillagers = [];
-    crossingApp.villagerEl.classList.add('hidden');
+    crossingApp.villagerPhone.classList.add('hidden');
 };
 
 //add event listener to buttons in villagerContainer

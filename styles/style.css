@@ -230,28 +230,6 @@ html {
   font-size: 62.5%;
 }
 
-header {
-  background-image: url("../assets/animal-crossing-banner-twitter.jpg");
-  background-size: cover;
-  background-position: 50% 72%;
-  height: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-header h1 {
-  font-family: "BioRhyme", serif;
-  margin: 0;
-  font-size: 4.5rem;
-  color: #FAFAFA;
-}
-
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -271,6 +249,61 @@ body {
   display: none;
 }
 
+p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+button {
+  background-color: #F2FDED;
+  background-color: #EB9486;
+  border: none;
+  -webkit-box-shadow: 2px 2px 2px #e46d5a;
+          box-shadow: 2px 2px 2px #e46d5a;
+}
+
+header {
+  background-image: url("../assets/animal-crossing-banner-twitter.jpg");
+  background-size: cover;
+  background-position: 50% 72%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header h1 {
+  font-family: "BioRhyme", serif;
+  margin: 0;
+  font-size: 5.5rem;
+  color: #FAFAFA;
+}
+header p {
+  font-size: 2.2rem;
+}
+header .overlay {
+  background-color: rgba(35, 35, 35, 0.7);
+  color: #FAFAFA;
+  padding: 70px;
+  text-align: center;
+}
+header i {
+  margin-top: 50px;
+  font-size: 4rem;
+}
+
 .mainWrapper {
   background-image: url("../assets/ac-new-horizons-leaf-pattern-v2-3840x2160-1.jpg");
   background-image: cover;
@@ -288,20 +321,13 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.mainWrapper .introduction {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.mainWrapper .introduction p {
-  margin: 0;
-}
 
 .phoneOutside {
   width: 335px;
   border: 10px solid #232323;
   border-radius: 25px;
   background-color: #232323;
-  min-height: 480px;
+  min-height: 620px;
   -webkit-box-shadow: 7px 4px 16px gray;
           box-shadow: 7px 4px 16px gray;
   border-bottom: 26px solid #232323;
@@ -315,6 +341,7 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  z-index: 1;
 }
 .phoneOutside .phoneIcon i {
   color: white;
@@ -329,9 +356,9 @@ body {
   margin: 0 40px;
 }
 .phoneOutside .phoneInside {
-  min-height: 460px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #95d590), color-stop(3%, #F2FDED), color-stop(84%, #95d590));
-  background: linear-gradient(to bottom, #95d590 2%, #F2FDED 3% 83%, #95d590 84%);
+  min-height: 560px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #95d590), color-stop(3%, #F2FDED), color-stop(86%, #95d590));
+  background: linear-gradient(to bottom, #95d590 2%, #F2FDED 3% 85%, #95d590 86%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -388,10 +415,16 @@ body {
   width: 100%;
 }
 .phoneOutside button {
+  color: #232323;
+  font-size: 1.8rem;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin: 20px auto 10px;
+}
+.phoneOutside button i {
+  position: relative;
+  top: 2px;
 }
 .phoneOutside .speciesContainer input, .phoneOutside .speciesContainer select {
   margin: 15px auto 0;
@@ -404,18 +437,27 @@ body {
   border-radius: 50%;
   max-width: 156px;
 }
-.villagerContainer button {
-  font-family: "Space Mono", monospace;
+.villagerContainer .nextButton, .villagerContainer .backButton {
+  font-size: 2.5rem;
 }
 .villagerContainer .nextButton {
   position: absolute;
   bottom: 0px;
   right: 47px;
 }
+.villagerContainer .nextButton i {
+  left: 2px;
+}
 .villagerContainer .backButton {
   position: absolute;
   bottom: 0px;
   left: 47px;
+}
+.villagerContainer .backButton i {
+  right: 2px;
+}
+.villagerContainer .noMatch {
+  margin-top: 180px;
 }
 
 .copyright {
@@ -429,6 +471,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10px;
 }
 .copyright p {
   margin: 0;

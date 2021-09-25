@@ -1,3 +1,29 @@
 html {
     font-size: 62.5%;
 }
+
+body {
+    display: flex;
+    font-family: $secondaryFont;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+button {
+    background-color: $primaryPhoneColor;
+    background-color: $accentColor;
+    border: none;
+    box-shadow: 2px 2px 2px darken($accentColor, 10);
+    // border-bottom: 4px solid darken($accentColor, 10);
+}

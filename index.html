@@ -13,14 +13,17 @@
 </head>
 <body>
     <header>
-        <h1>Choose Your Villager</h1>
+        <div class="overlay">
+            <h1>Choose Your Villager</h1>
+            <div class="introduction">
+                <p>Search all villagers in the Animal Crossing video game franchise! </p>
+                <i class="fas fa-angle-double-down" aria-hidden="true"></i>
+            </div>
+        </div>
     </header>
 
     <main class="mainWrapper">
         
-        <div class="introduction">
-            <p>Search all villagers in the Animal Crossing video game franchise! </p>
-        </div>
         <div class="formContainer phoneOutside">
             <!-- Test -->
             <div class="phoneIcon">
@@ -45,15 +48,15 @@
                 <fieldset id="genderSelect">
                     <legend>Pick a Gender?</legend>
                     <label class="inner" for="male">Male</label>
-                    <input class="inner" type="radio" id="male" value="Male" name="gender">
+                    <input required class="inner" type="radio" id="male" value="Male" name="gender">
 
                     <label class="inner" for="female">Female</label>
                     <input class="inner" type="radio" id="female" value="Female" name="gender">
                 </fieldset>
 
                 <label for="speciesRange">Pick a Species?</label>
-                <select name="speciesRange" id="speciesRange">
-                    <option selected="selected" disabled  hidden>Choose Range</option>
+                <select required name="speciesRange" id="speciesRange">
+                    <option value="" selected="selected" disabled  hidden>Choose Range</option>
                     <option value="first">A to C</option>
                     <option value="second">D to G</option>
                     <option value="third">H to M</option>
@@ -118,19 +121,22 @@
                     </select>
                 </div>
                 <div class="submitBackground">
-                    <button type="submit"></button>
+                    <button type="submit">
+                        <span class="sr-only">submit</span>
+                        <i class="fas fa-leaf" aria-hidden="true" title="submit"></i>
+                    </button>
                 </div>
             </form>
         </div>
 
-        <div class="phoneOutside">
+        <div class="villagerPhone phoneOutside hidden">
             <div class="phoneIcon">
                 <i class="fas fa-dot-circle"></i>
                 <i class="fas fa-wifi"></i>
                 <i class="fas fa-signal"></i>
                 <i class="fas fa-battery-three-quarters"></i>              
             </div>
-            <div class="villagerContainer phoneInside hidden"></div>
+            <div class="villagerContainer phoneInside"></div>
         </div>
     </main>
 

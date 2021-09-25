@@ -2,14 +2,32 @@ header {
     background-image: url('../assets/animal-crossing-banner-twitter.jpg');
     background-size: cover;
     background-position: 50% 72%;
-    height: 200px;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     h1 {
         font-family: $primaryFont;
         margin: 0;
-        font-size: 4.5rem;
+        font-size: 5.5rem;
         color: $white;
+    }
+
+    p {
+        font-size: 2.2rem;
+    }
+
+    .overlay {
+        background-color: rgba(35, 35, 35, 0.7);
+        color: $white;
+        padding: 70px;
+        text-align: center;
+    }
+
+    i {
+        margin-top: 50px;
+        font-size: 4rem;
     }
 }
