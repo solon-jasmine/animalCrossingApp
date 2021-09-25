@@ -41,7 +41,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         text-align: center;
         padding: 20px 20px 0 20px;
         background-color: white;
@@ -60,11 +60,20 @@ body {
     label {
         width: 100%;
     }
+
+    .personalityStyle {
+        margin-top: 25px;
+    }
+
     fieldset {
         display: flex;
         flex-wrap: wrap;
+        border: none;
         label, input {
             width: 50%;
+        }
+        .inner {
+            margin-bottom: 5px;
         }
     }
     .submitBackground {
@@ -74,12 +83,12 @@ body {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        margin: 20px auto 0;
+        margin: 20px auto 10px;
     }
 
     .speciesContainer{
         input, select {
-            margin: 0 auto;
+            margin: 15px auto 0;
         }
     }
 }
