@@ -242,6 +242,7 @@ header {
           align-items: center;
 }
 header h1 {
+  font-family: "BioRhyme", serif;
   margin: 0;
 }
 
@@ -249,6 +250,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: "Space Mono", monospace;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -264,6 +266,11 @@ body {
 }
 
 .mainWrapper {
+  background-image: url("../assets/ac-new-horizons-leaf-pattern-v2-3840x2160-1.jpg");
+  background-image: cover;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -284,14 +291,16 @@ body {
 }
 
 .formContainer {
-  max-width: 33%;
-  border: 20px solid black;
+  width: 335px;
+  border: 10px solid black;
   border-radius: 20px;
   background-color: black;
+  min-height: 480px;
 }
 .formContainer .formStyle {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, grey), color-stop(3%, white), color-stop(78%, grey));
-  background: linear-gradient(to bottom, grey 2%, white 3% 77%, grey 78%);
+  min-height: 460px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #95d590), color-stop(3%, #F2FDED), color-stop(84%, #95d590));
+  background: linear-gradient(to bottom, #95d590 2%, #F2FDED 3% 83%, #95d590 84%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,14 +311,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   text-align: center;
   padding: 20px 20px 0 20px;
   background-color: white;
-  border-top: 20px solid grey;
-  border-radius: 20px;
+  border-top: 20px solid #95d590;
+  border-radius: 30px;
 }
 .formContainer label, .formContainer select, .formContainer input, .formContainer button {
   display: block;
+}
+.formContainer select {
+  font-family: "Space Mono", monospace;
 }
 .formContainer label {
   width: 100%;
@@ -333,6 +347,9 @@ body {
   border-radius: 50%;
   margin: 20px auto 0;
 }
+.formContainer .speciesContainer input, .formContainer .speciesContainer select {
+  margin: 0 auto;
+}
 
 .villagerContainer {
   max-width: 33%;
@@ -340,9 +357,12 @@ body {
   border-radius: 20px;
   background-color: black;
 }
+.villagerContainer button {
+  font-family: "Space Mono", monospace;
+}
 
 .copyright {
-  background-color: yellowgreen;
+  background-color: #52C237;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

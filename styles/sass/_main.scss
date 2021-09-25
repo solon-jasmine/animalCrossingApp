@@ -1,5 +1,6 @@
 body {
     display: flex;
+    font-family: $secondaryFont;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
@@ -11,6 +12,9 @@ body {
 
 
 .mainWrapper {
+    background-image: url('../assets/ac-new-horizons-leaf-pattern-v2-3840x2160-1.jpg');
+    background-image: cover;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,25 +29,32 @@ body {
 
 
 .formContainer {
-    max-width: 33%;
-    border: 20px solid black;
+    width: 335px;
+    border: 10px solid black;
     border-radius: 20px;
     background-color: black;
+    min-height: 480px;
 
     .formStyle {
-        background: linear-gradient(to bottom, grey 2%, white 3% 77%, grey 78%);
+        min-height: 460px;
+        background: linear-gradient(to bottom, $secondaryPhoneColor 2%, $primaryPhoneColor 3% 83%, $secondaryPhoneColor 84%);
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-around;
         text-align: center;
         padding: 20px 20px 0 20px;
         background-color: white;
         // border: 1px solid black;
-        border-top: 20px solid grey;
-        border-radius: 20px;
+        border-top: 20px solid $secondaryPhoneColor;
+        border-radius: 30px;
     }
     label, select, input, button {
         display: block;
+    }
+
+    select {
+        font-family: $secondaryFont;
     }
 
     label {
@@ -65,6 +76,12 @@ body {
         border-radius: 50%;
         margin: 20px auto 0;
     }
+
+    .speciesContainer{
+        input, select {
+            margin: 0 auto;
+        }
+    }
 }
 
 .villagerContainer {
@@ -72,11 +89,15 @@ body {
     border: 20px solid black;
     border-radius: 20px;
     background-color: black;
+
+    button {
+        font-family: $secondaryFont;
+    }
 }
 
 
 .copyright {
-    background-color: yellowgreen;
+    background-color: $footerColor;
     display: flex;
     justify-content: center;
     align-items: center;
