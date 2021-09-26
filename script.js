@@ -244,17 +244,17 @@ crossingApp.resetPage = function() {
 
 //add event listener to buttons in villagerContainer
 crossingApp.villagerEl.addEventListener('click', (event) => {
-    if (event.target.className === 'nextButton') {
+    if (event.target.className === 'nextButton' || event.target.className === 'fas fa-caret-right') {
         crossingApp.currentVillagerIndex++;
         crossingApp.chooseVil(crossingApp.possibleVillagers);
     }
     
-    if (event.target.className === 'backButton') {
+    if (event.target.className === 'backButton' || event.target.className === 'fas fa-caret-left') {
         crossingApp.currentVillagerIndex--;
         crossingApp.chooseVil(crossingApp.possibleVillagers);
     }
 
-    if (event.target.className === 'resetButton') {
+    if (event.target.className === 'resetButton' || event.target.className === 'fas fa-undo-alt') {
         crossingApp.resetPage();
     }
 

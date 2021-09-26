@@ -298,6 +298,7 @@ header .overlay {
   color: #FAFAFA;
   padding: 70px;
   text-align: center;
+  max-width: 100vw;
 }
 header i {
   margin-top: 50px;
@@ -328,9 +329,10 @@ header i {
   border-radius: 25px;
   background-color: #232323;
   min-height: 620px;
-  -webkit-box-shadow: 7px 4px 16px gray;
-          box-shadow: 7px 4px 16px gray;
+  -webkit-box-shadow: 7px 4px 10px gray;
+          box-shadow: 7px 4px 10px gray;
   border-bottom: 26px solid #232323;
+  margin: 50px 0;
 }
 .phoneOutside .phoneIcon {
   position: relative;
@@ -408,7 +410,7 @@ header i {
 .phoneOutside fieldset label, .phoneOutside fieldset input {
   width: 50%;
 }
-.phoneOutside fieldset .inner {
+.phoneOutside fieldset input {
   margin-bottom: 5px;
 }
 .phoneOutside .submitBackground {
@@ -427,7 +429,7 @@ header i {
   top: 2px;
 }
 .phoneOutside .speciesContainer input, .phoneOutside .speciesContainer select {
-  margin: 15px auto 0;
+  margin: -20px auto 0;
 }
 
 .villagerContainer {

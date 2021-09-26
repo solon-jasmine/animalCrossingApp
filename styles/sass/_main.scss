@@ -14,8 +14,9 @@
     border-radius: 25px;
     background-color: $black;
     min-height: 620px;
-    box-shadow: 7px 4px 16px gray;
+    box-shadow: 7px 4px 10px gray;
     border-bottom: 26px solid $black;
+    margin: 50px 0;
 
     .phoneIcon{
         position: relative;
@@ -80,10 +81,14 @@
         label, input {
             width: 50%;
         }
-        .inner {
+        input {
             margin-bottom: 5px;
+            // appearance: none;
+            // background-color: tomato;
         }
     }
+
+    
     .submitBackground {
         width: 100%;
     }
@@ -103,7 +108,7 @@
 
     .speciesContainer{
         input, select {
-            margin: 15px auto 0;
+            margin: -20px auto 0;
         }
     }
 }
