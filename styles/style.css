@@ -395,8 +395,14 @@ header i {
   width: 100%;
   font-size: 1.8rem;
 }
+.phoneOutside .personalityStyle, .phoneOutside .speciesStyle {
+  margin-bottom: -25px;
+}
 .phoneOutside .personalityStyle {
   margin-top: 25px;
+}
+.phoneOutside legend {
+  margin-bottom: 5px;
 }
 .phoneOutside fieldset {
   display: -webkit-box;
@@ -411,7 +417,7 @@ header i {
   width: 50%;
 }
 .phoneOutside fieldset input {
-  margin-bottom: 5px;
+  margin: 2px 0;
 }
 .phoneOutside .submitBackground {
   width: 100%;
@@ -461,9 +467,13 @@ header i {
 .villagerContainer .noMatch {
   margin-top: 180px;
 }
+.villagerContainer h2 {
+  margin: 5px 0 0;
+  font-size: 2rem;
+}
 
 .copyright {
-  background-color: #52C237;
+  background-color: #72c76b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -484,4 +494,27 @@ header i {
 }
 .copyright p a {
   text-decoration: none;
+  color: #FAFAFA;
+}
+
+@media (max-width: 380px) {
+  header {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  header .overlay {
+    padding: 70px 20px;
+    height: 100vh;
+  }
+
+  .copyright a {
+    display: block;
+    text-align: center;
+  }
+}
+@media (max-width: 335px) {
+  .phoneOutside {
+    width: 100%;
+  }
 }

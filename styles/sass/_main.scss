@@ -69,8 +69,16 @@
         font-size: 1.8rem;
     }
 
+    .personalityStyle, .speciesStyle {
+        margin-bottom: -25px;
+    }
+
     .personalityStyle {
         margin-top: 25px;
+    }
+
+    legend {
+        margin-bottom: 5px;
     }
 
     fieldset {
@@ -82,7 +90,7 @@
             width: 50%;
         }
         input {
-            margin-bottom: 5px;
+            margin: 2px 0;
             // appearance: none;
             // background-color: tomato;
         }
@@ -144,11 +152,16 @@
     .noMatch {
         margin-top: 180px;
     }
+
+    h2 {
+        margin: 5px 0 0;
+        font-size: 2rem;
+    }
 }
 
 
 .copyright {
-    background-color: $footerColor;
+    background-color: darken($secondaryPhoneColor, 10);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,6 +174,7 @@
         }
         a {
             text-decoration: none;
+            color: $white;
         }
     }
 }

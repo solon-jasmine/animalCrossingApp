@@ -187,7 +187,7 @@ crossingApp.displayData = function(displayedVillager) {
         crossingApp.villagerEl.innerHTML = "";
 
         const quantity = document.createElement('p');
-        quantity.innerText = `Displaying ${crossingApp.currentVillagerIndex + 1} of ${crossingApp.possibleVillagers.length} results`;
+        quantity.innerText = `${crossingApp.currentVillagerIndex + 1} of ${crossingApp.possibleVillagers.length} results`;
         crossingApp.villagerEl.appendChild(quantity);
 
         const name = displayedVillager.name["name-USen"];
