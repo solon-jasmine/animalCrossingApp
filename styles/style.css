@@ -488,6 +488,7 @@ header i {
       -ms-flex-align: center;
           align-items: center;
   padding: 10px;
+  text-align: center;
 }
 .copyright p {
   margin: 0;
