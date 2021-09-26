@@ -24,6 +24,5 @@ button {
     background-color: $primaryPhoneColor;
     background-color: $accentColor;
     border: none;
-    box-shadow: 2px 2px 2px darken($accentColor, 10);
-    // border-bottom: 4px solid darken($accentColor, 10);
+    box-shadow: 2px 4px 2px darken($accentColor, 10);
 }

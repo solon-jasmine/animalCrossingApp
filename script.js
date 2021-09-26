@@ -136,14 +136,8 @@ crossingApp.filterData = function (userInput, jsonRes) {
         //check gender
         const conditionTwo = userInput.gender === jsonRes[villager].gender;
         
-                // console.log(userInput.gender);
-                // console.log(jsonRes[villager].gender);
-                // console.log(conditionTwo)
-        
         //check species
         const conditionThree = userInput.species === jsonRes[villager].species;
-
-        // console.log(conditionOne, conditionTwo, conditionOne && conditionTwo);
 
         if (conditionOne && conditionTwo && conditionThree) {
             crossingApp.possibleVillagers.push(jsonRes[villager]);
@@ -153,7 +147,7 @@ crossingApp.filterData = function (userInput, jsonRes) {
     crossingApp.chooseVil(crossingApp.possibleVillagers);
 };
 
-//5. randomly choose an villager from possible choices/ filtered options
+//5. Choose an villager from possible choices/ filtered options
 crossingApp.chooseVil = function(possibleVillagers) {
     if (possibleVillagers.length === 0) {
         crossingApp.displayData(null);
@@ -235,6 +229,7 @@ crossingApp.displayData = function(displayedVillager) {
     }
 }
 
+// resets the page
 crossingApp.resetPage = function() {
     crossingApp.formContainer.classList.remove('hidden');
     crossingApp.villagerEl.innerHTML = "";
@@ -262,11 +257,3 @@ crossingApp.villagerEl.addEventListener('click', (event) => {
 
 
 crossingApp.init();
-
-//stretch goals
-
-//add a reset button to randomly reselect a new activity with the same user input
-
-//add from gif from giphy using the activity name
-
-//visually increasing the tablet size of phone at end and having villager info inside

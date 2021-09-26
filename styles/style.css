@@ -259,8 +259,8 @@ button {
   background-color: #F2FDED;
   background-color: #EB9486;
   border: none;
-  -webkit-box-shadow: 2px 2px 2px #e46d5a;
-          box-shadow: 2px 2px 2px #e46d5a;
+  -webkit-box-shadow: 2px 4px 2px #e46d5a;
+          box-shadow: 2px 4px 2px #e46d5a;
 }
 
 header {
@@ -477,6 +477,10 @@ header i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
